@@ -6,7 +6,12 @@ pipeline {
                 sh 'mvn clean'
             }
         }
-    
+
+stage('identification') {
+            steps {
+                sh 'whoami'
+            }
+        }
     
         stage('package') {
             steps {
@@ -14,7 +19,7 @@ pipeline {
             }
         }
     
-
+	
     
         stage('creating docker image locally') {
             steps {
