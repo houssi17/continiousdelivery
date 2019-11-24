@@ -1,9 +1,24 @@
 pipeline {
     agent any
     stages {
-        stage('clean') {
+        stage('cleaning') {
             steps {
                 sh 'mvn clean'
+            }
+        }
+    }
+    stages {
+        stage('packaging') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+    }
+
+    stages {
+        stage('creating docker image locally') {
+            steps {
+                sh 'mvn dockerfile:build'
             }
         }
     }
