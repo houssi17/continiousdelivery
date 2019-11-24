@@ -10,7 +10,7 @@ pipeline {
     
         stage('package') {
             steps {
-                sh 'mvn package'
+                sh 'sudo mvn package'
             }
         }
     
@@ -18,7 +18,7 @@ pipeline {
     
         stage('creating docker image locally') {
             steps {
-                sh 'mvn dockerfile:build'
+                sh 'sudo mvn dockerfile:build'
             }
         }
     
