@@ -1,18 +1,15 @@
-stages {
-	stage('clean') {
-		steps {
-			... #clean maven project
-}
-}
-	stage('package') {
-		steps {
-			... #package maven project
-		
-}
-}
-	stage('create docker image') {
-		steps {
-			... #create docker image with maven plugin
-}
-}
+pipeline {
+    agent any
+    stages {
+        stage('Example') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
+    }
 }
