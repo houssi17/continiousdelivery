@@ -1,14 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('cleaning') {
+        stage('clean') {
             steps {
                 sh 'mvn clean'
             }
         }
-    }
     
-        stage('packaging') {
+    
+        stage('package') {
             steps {
                 sh 'mvn package'
             }
@@ -22,9 +22,5 @@ pipeline {
             }
         }
     
-    post { 
-        always { 
-            echo 'I will always say Hello again!'
-        }
-    }
+   }
 }
